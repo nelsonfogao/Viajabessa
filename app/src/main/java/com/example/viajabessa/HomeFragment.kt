@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,8 +28,12 @@ class HomeFragment : Fragment() {
         homeViewModel.pacotes.observe(viewLifecycleOwner, Observer {
             if(!it.isNullOrEmpty())
                 recyclerViewListPacotes.adapter = PacotesRecyclerAdapter(it){
-                    findNavController().navigate(R.id.detalhesFragment)
+                        val bundle = bundleOf(
+                            "pacotesId" to it.id
+                        )
+                        findNavController().navigate(R.id.detalhesFragment, bundle)
                 }
+
                 recyclerViewListPacotes.layoutManager = LinearLayoutManager(requireContext())
         })
         return root

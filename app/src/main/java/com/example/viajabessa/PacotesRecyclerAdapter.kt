@@ -41,7 +41,7 @@ class PacotesRecyclerAdapter (
             holder.textViewNome.text = pacotes.nome
             holder.textPreco.text = pacotes.valor.toString()
             Picasso.get().load(pacotes.imageUrl)
-            .into(holder.image);
+            .into(holder.image)
 
             holder.itemView.setOnClickListener {
                 actionClick(pacotes)
