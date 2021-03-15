@@ -3,7 +3,6 @@ package com.example.viajabessa.api
 import com.example.viajabessa.api.service.ProjectService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object ApiClient {
     private var instance: Retrofit? = null
