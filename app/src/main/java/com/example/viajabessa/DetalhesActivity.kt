@@ -22,8 +22,8 @@ class DetalhesActivity : AppCompatActivity() {
         viewModel.pacotes.observe(this, Observer {
             if (it != null)
                 textViewDetalhesNome.text = it.nome
-            textViewDetalhesValor.text = it.valor.toString()
-            textViewDetalhesDescricao.text = it.descricao
+                textViewDetalhesValor.text = it.valor.toString()
+                textViewDetalhesDescricao.text = it.descricao
             Picasso.get().load(it.imageUrl)
                 .into(imageViewDetalhes)
         })
